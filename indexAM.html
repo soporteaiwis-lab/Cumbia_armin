@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10131d">
+<title>AIWIS Music · Demos para compartir</title>
+<style>
+:root{color-scheme:dark;--bg:#10131d;--card:#191e2c;--muted:#aab2c5;--accent:#d9ff77}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#303a35,transparent 55%),var(--bg);color:#f6f8fc;font:16px/1.5 system-ui,sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}main{max-width:1100px;margin:auto;padding:36px 24px 60px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}.logo{font-weight:850;letter-spacing:-1px;font-size:24px}.logo span{color:var(--accent)}.tag{font-size:12px;border:1px solid #46513a;border-radius:30px;padding:7px 12px;color:var(--accent)}h1{font-size:clamp(32px,6vw,58px);line-height:1.1;letter-spacing:-2px;margin:12px 0}p{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:var(--accent)}.grid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;margin-top:32px}.panel{background:var(--card);border:1px solid #303648;border-radius:24px;padding:24px}.cover{aspect-ratio:1.3;border-radius:16px;background:radial-gradient(circle at 70% 30%,#ccfc6b,#40633f 45%,#152d30 80%);display:flex;flex-direction:column;justify-content:space-between;padding:26px;overflow:hidden;color:#10241b}.cover strong{font-size:clamp(44px,8vw,78px);line-height:.95;letter-spacing:-5px}.cover small{letter-spacing:3px;font-weight:700}.cover .waves{font-size:44px;letter-spacing:10px;opacity:.55}h2{font-size:23px;margin:20px 0 4px}.dedication{min-height:48px;font-size:14px}.recipient{color:var(--accent)}.timeline{display:flex;gap:12px;align-items:center;font-size:12px;font-variant-numeric:tabular-nums}input[type=range]{accent-color:var(--accent);min-width:0;cursor:pointer;min-height:44px}.timeline input{width:100%}.controls{display:flex;justify-content:center;align-items:center;gap:22px;margin:12px 0}.controls button{width:48px;height:48px;border-radius:50%;border:1px solid #444d63;background:#252c3d;color:white;font-size:23px}.controls .play{width:66px;height:66px;background:var(--accent);color:#142017;border:0}.volume{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}.volume input{flex:1}.listheading{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.listheading h2{margin:0}.count{color:var(--muted);font-size:13px}ol{padding:0;list-style:none;margin:0}.track{width:100%;display:flex;gap:12px;text-align:left;align-items:center;padding:17px 12px;border:1px solid transparent;border-bottom-color:#303648;color:white;background:transparent;border-radius:12px;min-height:76px}.track:hover{background:#252d3c}.track[aria-current=true]{background:#2b3540;border-color:#8da553}.number{font-variant-numeric:tabular-nums;color:var(--muted);width:24px;flex-shrink:0}.tracktext{flex:1;min-width:0}.filename{display:block;font-size:14px;overflow-wrap:anywhere}.format{display:block;font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:1px}.track[aria-current=true] .number{color:var(--accent)}.note{margin-top:26px;padding:18px;border-radius:14px;background:#111724;font-size:13px}.note strong{color:#fff;display:block;margin-bottom:5px}footer{margin-top:28px;font-size:12px;color:var(--muted)}#status{font-size:13px;min-height:40px;margin-top:12px;color:#d9ff77}a{color:var(--accent)}@media(max-width:720px){main{padding:22px 16px 36px}header{margin-bottom:32px}.grid{grid-template-columns:1fr}.panel{padding:18px}.cover{aspect-ratio:1.6}.tag{font-size:10px}h1{letter-spacing:-1px}}@media(prefers-reduced-motion:no-preference){button{transition:background .18s,border-color .18s}}
+</style>
+</head>
+<body><main>
+<header><div class="logo">AIWIS<span> Music.</span></div><span class="tag">DEMOS · VOL. 01</span></header>
+<div class="eyebrow">Hecho para compartir</div><h1>Una canción.<br>Una conexión.</h1><p>Cuatro demos, muchas emociones. Dale play y encuentra la tuya.</p>
+<div class="grid"><section class="panel" aria-label="Reproductor">
+<div class="cover" aria-hidden="true"><small>AIWIS MUSIC / DEMO SESSIONS</small><strong>Ritmo &amp;<br>corazón.</strong><div class="waves">▂▅▇▃▆▂▇</div></div>
+<h2 id="song">No Resistire</h2><p class="dedication"><span class="recipient" id="recipient"></span><br><span id="dedication"></span></p>
+<audio id="audio" preload="metadata" playsinline></audio>
+<div class="timeline"><span id="elapsed">0:00</span><input id="seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Progreso de la canción" disabled><span id="duration">0:00</span></div>
+<div class="controls"><button id="prev" aria-label="Pista anterior">⏮</button><button class="play" id="play" aria-label="Reproducir">▶</button><button id="next" aria-label="Pista siguiente">⏭</button></div>
+<div class="volume"><label for="volume">Volumen</label><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></div><p id="volumeNote" hidden style="font-size:12px">En este dispositivo, ajusta el volumen con los botones físicos.</p>
+<div id="status" role="status" aria-live="polite"></div>
+</section><section class="panel" aria-label="Lista de demos"><div class="listheading"><h2>Tu playlist</h2><span class="count" id="count"></span></div><ol id="playlist"></ol><div class="note"><strong>Para alguien especial</strong>Cada demo puede llevar un destinatario y una dedicatoria. Una pequeña historia antes del primer acorde.</div><p style="font-size:13px">AIWIS Music · Demos para nuestros amigos</p></section></div>
+<footer>Escucha, siente, comparte. · <a href="https://github.com/soporteaiwis-lab/Cumbia_armin" target="_blank" rel="noopener noreferrer">Repositorio de demos</a></footer>
+</main>
+<script>
+'use strict';
+// CATÁLOGO: agrega objetos con file, title, recipient y dedication.
+// Usa los nombres exactos del repositorio. Los textos se insertan de forma segura.
+const catalog = [
+ {file:'01 - No Resistire - Aiwis Music.mp3',title:'No Resistire',recipient:'Para nuestros amigos',dedication:'Una demo para compartir lo que sentimos.'},
+ {file:'02 - Vuelve Pronto - Aiwis Music.m4a',title:'Vuelve Pronto',recipient:'Para nuestros amigos',dedication:'Hay canciones que acortan la distancia.'},
+ {file:'03 - Perdoname - Aiwis Music.m4a',title:'Perdoname',recipient:'Para nuestros amigos',dedication:'Cuando las palabras se convierten en música.'},
+ {file:'04 - Vete vete - Aiwis Music.mp3',title:'Vete vete',recipient:'Para nuestros amigos',dedication:'Dale play. Que el ritmo cuente la historia.'}
+];
+// Vacío = archivos junto a index.html (GitHub Pages). Si están en una carpeta,
+// escribe aquí, por ejemplo, 'demos/'. También admite una URL absoluta.
+const AUDIO_BASE = '';
+const $ = id => document.getElementById(id);
+const audio=$('audio'); let current=0; let request=0;
+const time = seconds => Number.isFinite(seconds)?Math.floor(seconds/60)+':'+String(Math.floor(seconds%60)).padStart(2,'0'):'0:00';
+function source(file){return new URL(AUDIO_BASE+file.split('/').map(encodeURIComponent).join('/'),location.href).href;}
+function sync(){ $('play').textContent=audio.paused?'▶':'Ⅱ';$('play').setAttribute('aria-label',audio.paused?'Reproducir':'Pausar'); }
+function render(){ $('count').textContent=catalog.length+' demos'; catalog.forEach((track,i)=>{const li=document.createElement('li'),button=document.createElement('button');button.type='button';button.className='track';button.dataset.index=i;button.setAttribute('aria-current',String(i===current));const num=document.createElement('span');num.className='number';num.textContent=String(i+1).padStart(2,'0');const text=document.createElement('span');text.className='tracktext';const name=document.createElement('span');name.className='filename';name.textContent=track.file;const format=document.createElement('span');format.className='format';format.textContent='AIWIS MUSIC · '+track.file.split('.').pop().toUpperCase();text.append(name,format);button.append(num,text);button.addEventListener('click',()=>select(i,true));li.append(button);$('playlist').append(li);}); }
+async function start(){const token=++request;$('status').textContent='Cargando canción…';try{await audio.play();if(token===request)$('status').textContent='';}catch(error){if(token!==request)return;$('status').textContent=error.name==='NotAllowedError'?'Toca Reproducir para comenzar.':'No se pudo reproducir. Comprueba que el archivo exista y que el formato sea compatible.';}sync();}
+function select(i,autoplay=false){++request;audio.pause();current=(i+catalog.length)%catalog.length;const track=catalog[current];$('song').textContent=track.title;$('recipient').textContent=track.recipient||'';$('dedication').textContent=track.dedication||'';$('elapsed').textContent='0:00';$('duration').textContent='0:00';$('seek').value=0;$('seek').disabled=true;$('status').textContent='';audio.src=source(track.file);audio.load();document.querySelectorAll('.track').forEach(b=>b.setAttribute('aria-current',String(Number(b.dataset.index)===current)));sync();if(autoplay)start();}
+$('play').addEventListener('click',()=>{if(audio.paused)start();else{++request;audio.pause();$('status').textContent='';}});
+$('prev').addEventListener('click',()=>select(current-1,true));$('next').addEventListener('click',()=>select(current+1,true));
+audio.addEventListener('loadedmetadata',()=>{$('duration').textContent=time(audio.duration);$('seek').disabled=!(Number.isFinite(audio.duration)&&audio.duration>0);});
+audio.addEventListener('timeupdate',()=>{$('elapsed').textContent=time(audio.currentTime);$('seek').value=audio.duration?audio.currentTime/audio.duration*100:0;$('seek').setAttribute('aria-valuetext',time(audio.currentTime)+' de '+time(audio.duration));});
+$('seek').addEventListener('input',()=>{if(Number.isFinite(audio.duration))audio.currentTime=Number($('seek').value)/100*audio.duration;});
+audio.volume=.8;$('volume').addEventListener('input',()=>{audio.volume=Number($('volume').value);});
+if(/iPhone|iPad|iPod/.test(navigator.userAgent)){ $('volumeNote').hidden=false; }
+audio.addEventListener('play',sync);audio.addEventListener('pause',sync);audio.addEventListener('ended',()=>select(current+1,true));audio.addEventListener('error',()=>{$('status').textContent='No se pudo cargar esta demo. Revisa su nombre y ubicación en el repositorio, o prueba la siguiente pista.';sync();});
+render();select(0);
+if('mediaSession' in navigator){try{navigator.mediaSession.setActionHandler('play',start);navigator.mediaSession.setActionHandler('pause',()=>audio.pause());navigator.mediaSession.setActionHandler('previoustrack',()=>select(current-1,true));navigator.mediaSession.setActionHandler('nexttrack',()=>select(current+1,true));}catch(error){}}
+</script></body></html>
